@@ -1,13 +1,161 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+.editableInput {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  margin-top: 1.6rem;
+  border-radius: 0.5rem
+}
+
+#editableRow:nth-child(2n) .editableInput {
+  background-color: #E9E9E9;
+}
+
+.scrollDiv {
+  overflow: scroll;
+}
+
+.addDiv {
+  margin-bottom: 3rem;
+}
+
+.addInput {
+  border: none;
+  outline: none;
+  color: black;
+  margin: 1rem;
+  /* background-color: #3fd2e8; */
+  background-color: #cdcdcd;
+  border-radius: .5rem;
+}
+
+.addInput::placeholder {
+  color: black;
+}
+
+#recordHead {
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+#addForm {
+  background: #E9E9E9;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  /* margin-bottom: 2rem; */
+}
+
+#addBtn {
+  padding: 0rem 3rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+  border-radius: 2rem;
+}
+
+.editBtn {
+  border: 2px solid #0D6EFD;
+  color: #0D6EFD;
+  margin: 0.5rem 0rem;
+  padding: 0.8rem 3rem !important;
+  border-radius: 1rem;
+}
+
+.saveBtn {
+  background: #0D6EFD;
+  color: white;
+  border: none;
+  margin: 0.5rem 0rem;
+  padding: 0.8rem 3rem !important;
+  border-radius: 1rem;
+}
+
+.editBtn:hover {
+  background-color: #0D6EFD;
+  color: white;
+}
+
+
+
+#row:nth-child(2n-1) .editBtn {
+  /* background: white; */
+  color: #0D6EFD;
+}
+
+#row:nth-child(2n-1) .editBtn:hover {
+  color: white;
+}
+
+#exportBtn {
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  #navDiv {
+    display: flex;
+    justify-content: center;
+  }
+
+  .editBtn,
+  .saveBtn {
+    padding: 0.4rem 1.5rem !important;
+    border-radius: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+
+  .addDiv {
+    margin-bottom: 0;
+  }
+
+  #addForm {
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+  }
+
+  .addInput {
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+  }
+
+  #addBtn {
+    padding: 0rem 3.5rem;
+    height: 4.5rem;
+    font-size: 1.7rem;
+    margin-top: 2.8rem;
+    border-radius: 4rem;
+  }
 }
