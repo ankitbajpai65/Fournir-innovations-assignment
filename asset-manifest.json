@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Fournir-innovations-assignment/static/css/main.a952bcba.css",
+    "main.js": "/Fournir-innovations-assignment/static/js/main.80bfbe61.js",
+    "index.html": "/Fournir-innovations-assignment/index.html",
+    "main.a952bcba.css.map": "/Fournir-innovations-assignment/static/css/main.a952bcba.css.map",
+    "main.80bfbe61.js.map": "/Fournir-innovations-assignment/static/js/main.80bfbe61.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a952bcba.css",
+    "static/js/main.80bfbe61.js"
+  ]
+}
