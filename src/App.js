@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CSVLink } from 'react-csv';
 import Student from './Student';
 import Data from './Data';
@@ -14,8 +14,14 @@ const headers = [
   { label: "Email", key: "email" },
   { label: "CGPA", key: "cgpa" },
 ];
+const getLocalItems = () => {
+  var data = localStorage.getItem('Students');
+  console.log('retrievedObject: ', JSON.parse(data));
+  return JSON.parse(localStorage.getItem('Students'));
+}
 const App = () => {
-  const [students, setStudents] = useState(Data);
+  // const [students, setStudents] = useState(Data);
+  const [students, setStudents] = useState(getLocalItems());
   // console.log(students);
   const [addStudent, setAddStudent] = useState({
     name: "",
@@ -32,6 +38,10 @@ const App = () => {
     cgpa: "",
   });
   const [editStudentId, setEditStudentId] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("Students", JSON.stringify(students));
+  }, [students])
 
   // When we fill input box for adding rows(below the table)
   const inputEvent = (event) => {
@@ -122,11 +132,13 @@ const App = () => {
     setEditStudentId(null);
     // seteditStudentId(val.id);
   }
+
   const csvReport = {
     filename: 'Report.csv',
     headers: headers,
     data: students
   }
+
   return (
     <div>
       <Navbar />
