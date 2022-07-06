@@ -16,7 +16,7 @@ const headers = [
 ];
 const getLocalItems = () => {
   var data = localStorage.getItem('Students');
-  console.log('retrievedObject: ', JSON.parse(data));
+  // console.log('retrievedObject: ', JSON.parse(data));
   return JSON.parse(localStorage.getItem('Students'));
 }
 const App = () => {
@@ -72,6 +72,14 @@ const App = () => {
     // console.log(newItem);
     const newItems = [...students, newItem];
     setStudents(newItems);
+    const empty = {
+      name: "",
+      rollNo: "",
+      semester: "",
+      email: "",
+      cgpa: ""
+    };
+    setAddStudent(empty); // for clearing the input fields
   };
 
   // When we click "edit" btn to edit the row
